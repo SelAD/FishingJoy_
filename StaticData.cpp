@@ -36,7 +36,7 @@ int StaticData::intValueForKey(const std::string &key) {
 	return _dictionary->valueForKey(key)->intValue();
 }
 
-cont char* StaticData::stringValueFromKey(const std::string &key) {
+const char* StaticData::stringValueFromKey(const std::string &key) {
 
 	return _dictionary->valueForKey(key)->getCString();
 }
@@ -46,7 +46,7 @@ float StaticData::floatValueFromKey(const std::string &key) {
 	return _dictionary->valueForKey(key)->floatValue();
 }
 
-//¸ù¾İ¼üÖµµÃµ½boolÀàĞÍÊı¾İ
+//æ ¹æ®é”®å€¼å¾—åˆ°boolç±»å‹æ•°æ®
 bool StaticData::booleanFromKey(const std::string &key) {
 
 	return _dictionary->valueForKey(key)->boolValue();
@@ -69,7 +69,7 @@ cocos2d::CCSize StaticData::sizeFormKey(const std::string &key) {
 
 bool StaticData::init() {
 
-//´´½¨³ö´Êµä¶ÔÏó
+//åˆ›å»ºå‡ºè¯å…¸å¯¹è±¡
 	_dictionary = CCDictionary::createWithContentsOfFile(_staticFileName.c_str());
 	_dictionary->retain();
 
