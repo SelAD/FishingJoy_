@@ -1,27 +1,20 @@
 #include "BackgroundLayer.h"
+#include "StaticData.h"
 
-
-
-BackgroundLayer::BackgroundLayer()
-{
-}
-
-
-BackgroundLayer::~BackgroundLayer()
-{
-}
-
+USING_NS_CC;
 bool BackgroundLayer::init()
 {
-	if (!CCLayer::init())
-	{
-		return false;
-	}
-	CCSprite *bgSprite = CCSprite::create(STATIC_DATA_STRING("game_background_01"));
-	this->addChild(bgSprite);
-
-	CCSize winSize = CCDirector::sharedDirector()->getWinSize();
-	bgSprite->setPosition(CCPoint(winSize.width / 2, winSize.height / 2));
-	return true;
-	
+	 if(CCLayer::init()){
+        CCSize winSize = CCDirector::sharedDirector()->getWinSize();
+		CCSprite* background;
+       // CCSprite* background = CCSprite::createWithSpriteFrameName(STATIC_DATA_STRING("game_background_01"));
+		if(CCLayer::init()){
+			background = CCSprite::create(STATIC_DATA_STRING("game_background_0%s",&SelectScene::transition()));}
+		else
+			background = CCSprite::create(STATIC_DATA_STRING("game_background_01"));
+        background->setPosition(CCPointMake(winSize.width*0.5,winSize.height*0.5));
+        this->addChild(background);
+        return true;
+    }
+    return false;
 }
