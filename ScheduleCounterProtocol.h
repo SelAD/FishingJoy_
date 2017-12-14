@@ -11,7 +11,7 @@ public:
     /**
      *	@brief	    Optional
      *
-     *	@param 	number 	需要设置的数字
+     *	@param 	number 	闇�瑕佽缃殑鏁板瓧
      */
     virtual void __stdcall setScheduleNumber(int number){return;};
 };
